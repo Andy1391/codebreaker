@@ -26,7 +26,7 @@ class Game
     user_code   
   end
  
-  def count_plus
+  def count_plus(user_code)
     plus = []
     CODE_SIZE.times do |i|
       if user_code[i] == secret_code[i]
@@ -36,7 +36,7 @@ class Game
     plus        
   end
 
-  def count_minus
+  def count_minus(user_code)
     minus = []
     CODE_SIZE.times do |i|
       if user_code.include?(secret_code[i]) && user_code[i] != secret_code[i]
@@ -47,9 +47,8 @@ class Game
   end
 
   def count_plus_and_minus
-    count = ""
+    count = []
     count << count_plus.concat(count_minus).to_s
-    puts "Result : #{count}"
   end
 
   def win?
@@ -78,7 +77,3 @@ class Game
   end
   
 end
-   
-
-
-
