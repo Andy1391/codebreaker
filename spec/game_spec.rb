@@ -1,4 +1,4 @@
-require_relative "../lib/codebreaker/game.rb"
+require_relative "./lib/codebreaker/game.rb"
 
 module Codebreaker
   RSpec.describe Game do
@@ -17,7 +17,7 @@ module Codebreaker
       end
 
       it 'in the range 0 to 6' do
-      expect(game.instance_variable_get(:@secret_code)).to all((be >= 0).and(be <= 6))
+      expect(game.instance_variable_get(:@secret_code)).to all((be >= 1).and(be <= 6))
       end
     end   
 
@@ -67,7 +67,7 @@ module Codebreaker
       end
 
       it 'no return minus' do
-      expect(game.send(:count_minus, [0, 0, 1, 6])).to be_empty
+      expect(game.send(:count_minus, [6, 1, 1, 6])).to be_empty
       end
     end     
   end      
