@@ -1,11 +1,10 @@
-
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "codebreaker/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "codebreaker"
-  spec.version       = "0.1.0"
+  spec.version       = Codebreaker::VERSION
   spec.authors       = ["Andy"]
   spec.email         = ["dp130291mav@gmail.com"]
   spec.summary       = "This is an example!"
